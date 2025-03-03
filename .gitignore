@@ -4,4 +4,3 @@ node_modules
 *.log
 .profile
 *.svg
-src/video/*
