@@ -1,6 +1,6 @@
 body,
 html {
-  background: #121212;
+  background: #2aff00;
   height: 100%;
   margin: 0;
   /* font-family: 'Raleway Dots', cursive; */
@@ -19,7 +19,7 @@ html {
 
 .header {
   padding: 10px 20px;
-  background: #d2c132;
+  background: #2aff00;
   /* max-width: 600px; */
   text-align: center;
 }

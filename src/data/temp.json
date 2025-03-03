@@ -1,0 +1,6 @@
+flower = '[{"name" : "flwr-arp-3", "trigger" : "flower"},
+  {"name" : "flwr-main", "trigger" : "question"},
+  {"name" : "J", "trigger" : "Jessie"},
+  {"name" : "screen", "trigger" : "hungry"},
+  {"name" : "hi", "trigger" : "break"},
+  {"name" : "32-sec", "trigger" : "start"}]';

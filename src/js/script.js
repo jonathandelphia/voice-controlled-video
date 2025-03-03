@@ -23,7 +23,7 @@
     vidEl.src = "video/" + myVids[i].name + '.mp4';
     vidEl.classList = "vid " + myVids[i].trigger;
     vidEl.id = myVids[i].trigger;
-    vidEl.loop = "true";
+    vidEl.loop = true;
     vidContainer.appendChild(vidEl);
 
   }
@@ -59,11 +59,33 @@
 
 
   var triggers = {
+    'coming': 'coming',
+    'forever': 'forever',
+    'thanks': 'thanks',
+    'where': 'where',
+    'owner': 'owner',
+    'bored': 'bored',
+    'lunch': 'lunch',
+    'burger': 'burger',
+    'patty': 'patty',
+    'sorry': 'sorry',
+    'beef': 'beef',
+    'waiting': 'waiting',
+    'meal': 'meal',
+    'slow': 'slow',
+    'frustrated': 'frustrated',
+    'global': 'global',
     'flower': 'flower',
     'break': 'break',
     'question': 'question',
     'burger': 'burger',
-    'empty': 'empty'
+    'hungry': 'hungry',
+    'start': 'start', 
+    'world': 'world',
+    'push': 'push',
+    'restaurant': 'restaurant',
+    'house': 'house'
+
 
   };
 
@@ -151,23 +173,23 @@
             });
             const vidLength = trigVid[0].duration;
             // console.log(trigVid);
-            if(!trigVid[0].paused && trigVid[0].currentTime > 2) {
-              //repeat
-              // console.log('dub');
-              // trigVid[0].pause();
-              // trigVid[0].currentTime = 0;
-              // trigVid[0].play();
-            }
             // if(!trigVid[0].paused && trigVid[0].currentTime > 2) {
-            //   const vidLength = trigVid[0].duration;
-            //   const trim = vidLength - 1;
-            //   console.log(vidLength,trim);
-            //   console.log('trim');
-            //   trigVid[0].pause();
-            //   trigVid[0].currentTime = 0;
-            //   trigVid[0].play();
-            //
+            //   //repeat
+            //   // console.log('dub');
+            //   // trigVid[0].pause();
+            //   // trigVid[0].currentTime = 0;
+            //   // trigVid[0].play();
             // }
+            if(!trigVid[0].paused && trigVid[0].currentTime > 2) {
+              const vidLength = trigVid[0].duration;
+              const trim = vidLength - 1;
+              console.log(vidLength,trim);
+              console.log('trim');
+              trigVid[0].pause();
+              trigVid[0].currentTime = 0;
+              trigVid[0].play();
+
+            }
             var video = VideoFrame({
                 id: trigVid[0].id,
                 frameRate: 24,
