@@ -4,8 +4,8 @@ html {
   height: 100%;
   margin: 0;
   /* font-family: 'Raleway Dots', cursive; */
-  font-family: 'Abril Fatface', cursive;
-
+  /* font-family: 'Abril Fatface', cursive; */
+  font-family: "Chaos Agatha DEMO", cursive;
 }
 
 .main {
@@ -24,6 +24,20 @@ html {
   text-align: center;
 }
 
+@keyframes textAnimation {
+  0% {
+    opacity: 0;
+    /* transform: scale(0.9) translateX(5px); */
+  }
+  100% {
+    opacity: 1;
+    /* transform: scale(1) translateX(0); */
+  }
+}
+
+.animate-text {
+  animation: textAnimation 0.5s ease-in-out forwards;
+}
 
 .header__title {
   text-transform: uppercase;
@@ -33,19 +47,17 @@ html {
   width: 100%;
   margin: 0;
   border-right: 1px solid #000;
+  line-height: 0.8em;
 }
 
 .header.take {
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.5);
   position: absolute;
   color: #fff;
   top: 0;
   z-index: 999;
   height: 100vh;
-  font-family: 'Raleway Dots', cursive;
-
-
-
+  font-family: "Raleway Dots", cursive;
 }
 .header.take .header__title {
   text-transform: uppercase;
@@ -90,9 +102,15 @@ html {
   animation: AnimationName 1s ease infinite;
 
   @-webkit-keyframes AnimationName {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 }
 
@@ -140,7 +158,7 @@ html {
 }
 
 .cube {
-width: 100%;
+  width: 100%;
   margin: 0 auto 0;
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
@@ -163,20 +181,54 @@ width: 100%;
 }
 
 .vid {
-  display: none;
   width: 100%;
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
 }
 
-.moon .moon {z-index: 9999}
-.surface .surface {z-index: 9999}
-.burger .burger {z-index: 9999}
+.vid.active {
+  opacity: 1;
+  z-index: 2;
+}
 
+.vid-container {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-.cube__side, .cube__side--front, .cube__side--back, .cube__side--right, .cube__side--left, .cube__side--top, .cube__side--bottom {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.moon .moon {
+  z-index: 9999;
+}
+.surface .surface {
+  z-index: 9999;
+}
+.burger .burger {
+  z-index: 9999;
+}
+
+.cube__side,
+.cube__side--front,
+.cube__side--back,
+.cube__side--right,
+.cube__side--left,
+.cube__side--top,
+.cube__side--bottom {
   display: block;
   position: absolute;
   width: 196px;
@@ -187,7 +239,7 @@ width: 100%;
   font-weight: bold;
   color: #777;
   font-size: 80px;
-  font-family: 'Helvetica';
+  font-family: "Helvetica";
   font-weight: 400;
   text-align: center;
 }

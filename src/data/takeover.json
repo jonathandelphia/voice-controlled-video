@@ -1,1 +1,5 @@
-takeover = '[{"name" : "did-not", "text" : "did not work"}]';
+[
+  {
+    "text": "didnt"
+  }
+]
